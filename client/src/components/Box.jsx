@@ -6,11 +6,19 @@ class Box extends Component {
     this.state = {
       checked: false
     }
+    this.toggleCheck = this.toggleCheck.bind(this);
+  }
+  toggleCheck() {
+    this.setState({
+      checked: true
+    });
   }
   render() {
     return (
-      <div className="box">
-      box here
+      <div className="box" onClick={this.toggleCheck}>
+      <span className="playerMark">
+        { this.state.checked ? 'X' : '' }
+      </span>
       </div>
     );
   }
